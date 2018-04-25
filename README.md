@@ -143,3 +143,15 @@ export default Login;
 - Facebookログイン/設定/リダイレクトの設定をする
 - 有効なOAuthリダイレクトURIにローカルホストのポートを入力
 - `https://localhost:3000/`(※3000番で起動しているとき) 2018/4月時点でhttpsでやれと怒られるので注意
+- `https://github.com/facebook/create-react-app/issues/1411`ここに記載
+- pakage.jsonを修正
+```js
+  "scripts": {
+    //これで動くhttps化
+    "start": "HTTPS=true react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+  //これめちゃくちゃはまったので注意
+```
