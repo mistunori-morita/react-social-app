@@ -4,14 +4,15 @@ import PropTypes from 'prop-types'
 import './App.css'
 
 import Home from './views/Home'
+import Login from './views/Login'
 
 class App extends Component {
   render() {
     return (
       <Router history={ this.props.history }>
         <div>
-          <Route exact path="/" component={ Home }/>
-          {/* Here you can put more routes on */}
+          <Route exact path="/" component={ Login }/>
+          <Route path="/home" component={ Home } />
         </div>
       </Router>
     );

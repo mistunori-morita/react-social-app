@@ -1,0 +1,17 @@
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.Login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.Login-box {
+    display: flex;
+    flex-direction: column;
+}
