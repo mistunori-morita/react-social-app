@@ -2,6 +2,7 @@ html,
 body {
     width: 100%;
     overflow-x: hidden;
+    margin: 0;
 }
 
 .Login {
@@ -14,4 +15,13 @@ body {
 .Login-box {
     display: flex;
     flex-direction: column;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-content button:nth-child(1){
+  margin-bottom: 15px;
 }

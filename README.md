@@ -56,3 +56,31 @@ class Login extends Component {
 export default Login;
 ```
 - views/index.cssを作成してボタンにスタイリング
+
+## materialize-cssを使ってレイアウトを整える
+- `npm install materialize-css`インストールする
+- `http://materializecss.com/`
+- Login.jsにインポート
+```js
+import 'materialize-css/dist/css/materialize.min.css';
+```
+- http://materializecss.com/buttons.html
+- スタリングしたいパーツを検索して適用させていく
+- `http://materializecss.com/color.html`色はここから
+- 使い方
+```js
+//好きな色を調べてblue accent-3こんな感じでクラスに指定するだけ
+<button className="waves-effect waves-light btn blue accent-3" id="facebook">Facebook</button>
+
+```
+
+####  materialize.cssのアイコンを使う場合
+- `http://materializecss.com/icons.html`に行き
+- `  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+`これをpublic/index.htmlに貼り付ける
+
+###＃ fontawesomeのアイコンを使う場合
+- `https://fontawesome.com/get-started`
+- `<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
+`これをpublic/index.htmlに読み込み（2018年４月時点でバージョン変わってる）
