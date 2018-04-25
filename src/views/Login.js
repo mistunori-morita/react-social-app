@@ -12,10 +12,10 @@ class Login extends Component {
   }
 
   responseFacebook(response){
-
+    console.log(response)
   }
   onFailure(error){
-
+    console.log(error)
   }
   render() {
     return (
@@ -24,11 +24,11 @@ class Login extends Component {
           <div className="card">
             <div className="card-content">
             <FacebookLogin 
-                appId=""
+                appId="357217358124000"
               autoload= {false}
               fields="name, email, picuture.width(120)"
               callback={ this.responseFacebook}
-              onFailure={this.onFailure}
+                onFailure={this.onFailure}
               textButton="Facebook"
                 cssClass="waves-effect waves-light btn blue accent-3"
                 icon="fab fa-facebook-f"

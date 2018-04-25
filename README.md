@@ -138,3 +138,8 @@ class Login extends Component {
 
 export default Login;
 ```
+
+#### ダッシュボード/設定/でfacebookログインの設定
+- Facebookログイン/設定/リダイレクトの設定をする
+- 有効なOAuthリダイレクトURIにローカルホストのポートを入力
+- `https://localhost:3000/`(※3000番で起動しているとき) 2018/4月時点でhttpsでやれと怒られるので注意
