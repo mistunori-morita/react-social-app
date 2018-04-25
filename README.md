@@ -84,3 +84,57 @@ import 'materialize-css/dist/css/materialize.min.css';
 - `<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
 
 `これをpublic/index.htmlに読み込み（2018年４月時点でバージョン変わってる）
+
+
+### facebookLoginの実装
+- Loginコンポーネントにインポート`import FacebookLogin from 'react-facebook-login'`
+```js
+import React, { Component } from 'react'
+import './index.css';
+import 'materialize-css/dist/css/materialize.min.css';
+import FacebookLogin from 'react-facebook-login'
+
+
+class Login extends Component {
+  constructor() {
+    super();
+    this.responseFacebook = this.responseFacebook.bind(this);
+    this.onFailure = this.onFailure.bind(this);
+  }
+
+  responseFacebook(response){
+
+  }
+  onFailure(error){
+
+  }
+  render() {
+    return (
+      <div className="Login">
+        <div className="Login-box">
+          <div className="card">
+            <div className="card-content">
+            //ドキュメントに書かれてるものを使って設定する
+            <FacebookLogin 
+                appId="xxxここはダッシュボードのID"
+              autoload= {false}
+              fields="name, email, picuture.width(120)"
+              callback={ this.responseFacebook}
+              onFailure={this.onFailure}
+              textButton="Facebook"
+                cssClass="waves-effect waves-light btn blue accent-3"
+                icon="fab fa-facebook-f"
+            />
+       
+              <button className="waves-effect waves-light btn red lighten-1" id="google">Google<i className="fab fa-google"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+export default Login;
+```
