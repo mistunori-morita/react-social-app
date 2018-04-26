@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './index.css';
 import 'materialize-css/dist/css/materialize.min.css';
+import GoogleLogin from 'react-google-login'
 import FacebookLogin from 'react-facebook-login'
 import { Redirect } from 'react-router-dom'
 
@@ -14,6 +15,7 @@ class Login extends Component {
     }
 
     this.responseFacebook = this.responseFacebook.bind(this);
+    this.responseGoogle = this.responseGoogle.bind(this)
     this.onFailure = this.onFailure.bind(this);
   }
 
@@ -29,6 +31,9 @@ class Login extends Component {
     this.setState({
       isLogged: true
     });
+  }
+  responseGoogle(response){
+    console.log(response);
   }
 
   onFailure(error) {
@@ -55,8 +60,16 @@ class Login extends Component {
                 icon="fab fa-facebook-f"
               />
 
-              <button className="waves-effect waves-light btn red lighten-1" id="google">Google<i className="fab fa-google"></i>
-              </button>
+              <GoogleLogin 
+                clientId="pps.googleusercontent.com"
+                autoload={ false }
+                onSuccess={ this.responseGoogle }
+                onFailure={this.onFailure}
+                className="waves-effect waves-light btn red lighten-1">
+                <i className="fab fa-google"></i>
+                <span>Inciar Sesion</span>
+              </GoogleLogin>
+
             </div>
           </div>
         </div>

@@ -214,3 +214,31 @@ render() {
     return(<Redirect to="/home/" />);
   }
 ```
+
+## Googleログイン
+- https://console.developers.google.com/projectselector/apis/dashboard
+- 認証情報/認証情報を作成/クライアントIDの作成/必要な情報を入力
+- クライアントIDがいる、それでリダイレクトのところとか諸々設定(localhost:3000番で起動ならそれ)
+- ![pc](imgFile/1.png)
+- ![pc](imgFile/2.png)
+- views/Login.jsに`import GoogleLogin from 'react-google-login'`をインポート
+- `https://github.com/anthonyjgrove/react-google-login`で雛形をコピー
+```js
+  clientId=""
+  autoload={ falase }
+  onSuccess={ this.responseGoogle }
+  onFailure={this.onFailure}
+```
+```js
+
+<GoogleLogin 
+  clientId="apps.googleusercontent.com"
+  autoload={ false }
+  onSuccess={ this.responseGoogle }
+  onFailure={this.onFailure}
+  className="waves-effect waves-light btn red lighten-1">
+  <i className="fab fa-google"></i>
+  <span>Inciar Sesion</span>
+</GoogleLogin>
+
+```
