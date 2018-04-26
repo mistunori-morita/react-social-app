@@ -224,14 +224,9 @@ render() {
 - ![pc](imgFile/3.png)
 - views/Login.jsに`import GoogleLogin from 'react-google-login'`をインポート
 - `https://github.com/anthonyjgrove/react-google-login`で雛形をコピー
-```js
-  clientId=""
-  autoload={ falase }
-  onSuccess={ this.responseGoogle }
-  onFailure={this.onFailure}
-```
-```js
 
+```js
+//これが雛形
 <GoogleLogin 
   clientId="apps.googleusercontent.com"
   autoload={ false }
