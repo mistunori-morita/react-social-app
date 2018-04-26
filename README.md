@@ -221,6 +221,7 @@ render() {
 - クライアントIDがいる、それでリダイレクトのところとか諸々設定(localhost:3000番で起動ならそれ)
 - ![pc](imgFile/1.png)
 - ![pc](imgFile/2.png)
+- ![pc](imgFile/3.png)
 - views/Login.jsに`import GoogleLogin from 'react-google-login'`をインポート
 - `https://github.com/anthonyjgrove/react-google-login`で雛形をコピー
 ```js
