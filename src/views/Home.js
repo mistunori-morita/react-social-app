@@ -17,6 +17,13 @@ class Home extends Component {
     let fbData = JSON.parse(localStorage.getItem('fbData'));
     let googleData = JSON.parse(localStorage.getItem('googleData'));
 
+
+    if(!fbData && !googleData){
+      this.setState({
+        isLogout: true
+      })
+    }
+
     if (fbData) {
       this.setState({
         profileImage: fbData.picture,

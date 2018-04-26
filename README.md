@@ -402,3 +402,14 @@ class Home extends Component {
           </div>
         </nav>
 ```
+
+### login状態を判断
+- このままだとlocalStrageをどちらかクリアしてもHome画面にけちゃうので修正
+```js
+//これでisLogoutを更新して、localStrageに保存されてないときははじく
+    if(!fbData && !googleData){
+      this.setState({
+        isLogout: true
+      })
+    }
+```

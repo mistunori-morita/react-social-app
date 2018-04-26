@@ -19,6 +19,14 @@ class Login extends Component {
     this.onFailure = this.onFailure.bind(this);
   }
 
+  componentWillMount(){
+    if(localStorage.getItem("fbData") || localStorage.getItem("googleData")){
+      this.setState({
+        isLogged: true
+      })
+    }
+  }
+
   responseFacebook(response) {
     console.log(response)
     localStorage.setItem("fbData", JSON.stringify({
