@@ -155,3 +155,4 @@ export default Login;
   }
   //これめちゃくちゃはまったので注意
 ```
+- https://ngrok.comもしくはこれ使う
