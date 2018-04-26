@@ -38,3 +38,9 @@ body {
     width: 45px;
     height: auto;
 }
+
+.Home-logout{
+  font-size: 1.5em;
+  margin: -5px 10px 0 10px;
+  cursor: pointer;
+}
