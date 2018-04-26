@@ -276,7 +276,7 @@ class Home extends Component {
   componentWillMount(){
     let fbData = JSON.parse(localStorage.getItem('fbData'));
     let googleData = JSON.parse(localStorage.getItem('googleData'));
-    //条件分岐でsetStateをしてstateを更新(つまりこのstateをrender野中で使えるように)
+    //条件分岐でsetStateをしてstateを更新(つまりこのstateをrender野中で使えるように) 2
     if(fbData){
       this.setState({
         profileImage: fbData.picture,
@@ -296,7 +296,7 @@ class Home extends Component {
     return(
       <div>
         <nav>
-        //setStateをしたstateを使って表示させてる
+        //setStateをしたstateを使って表示させてる 3
           <div className="nav-wrapper">
             <a href="" className="brand-logo left">Logo</a>
             <ul id="nav-mobile" className="right hide-on-med-and-down">
