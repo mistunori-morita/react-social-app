@@ -158,3 +158,59 @@ export default Login;
 ```
 - https://ngrok.comもしくはこれ使う
 - https://qiita.com/kitaro729/items/44214f9f81d3ebda58bdこの辺とか見るとよき
+
+## localstrageに保存
+```js
+//localStorageにセットアイテムで保存
+  localStorage.setItem("fbData", JSON.stringify({
+    token: response.token,
+    email: response.email,
+    name: response.name,
+    picture: response.picture.data.url,
+    social: 'fb'
+  }));
+```
+
+### Redirect
+- `import { Redirect } from 'react-router-dom'`を読み込んで使う
+```js
+class Login extends Component {
+  constructor() {
+    super();
+
+  //ここでstateを定義
+  this.state = {
+    isLogged: false,
+    social: ''
+  }
+
+  this.responseFacebook = this.responseFacebook.bind(this);
+  this.onFailure = this.onFailure.bind(this);
+}
+
+//responseが帰ってきたらローカルストレージにツッコミ
+responseFacebook(response) {
+  console.log(response)
+  localStorage.setItem("fbData", JSON.stringify({
+    token: response.token,
+    email: response.email,
+    name: response.name,
+    picture: response.picture.data.url,
+    social: 'fb'
+  }));
+  //setStateでstateを更新
+  this.setState({
+    isLogged: true
+  });
+}
+
+onFailure(error) {
+  console.log(error)
+}
+
+render() {
+  //stateが更新されたら条件付きレンダリングでログインしている際にHomeに飛ばす
+  if(this.state.isLogged){
+    return(<Redirect to="/home/" />);
+  }
+```
