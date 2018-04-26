@@ -11,10 +11,10 @@ class Login extends Component {
     this.onFailure = this.onFailure.bind(this);
   }
 
-  responseFacebook(response){
+  responseFacebook(response) {
     console.log(response)
   }
-  onFailure(error){
+  onFailure(error) {
     console.log(error)
   }
   render() {
@@ -23,17 +23,15 @@ class Login extends Component {
         <div className="Login-box">
           <div className="card">
             <div className="card-content">
-            <FacebookLogin 
+              <FacebookLogin
                 appId="357217358124000"
-              autoload= {false}
-              fields="name, email, picuture.width(120)"
-              callback={ this.responseFacebook}
+                autoload={false}
+                fields="name, email, picture.width(120)"
+                callback={this.responseFacebook}
                 onFailure={this.onFailure}
-              textButton="Facebook"
-                cssClass="waves-effect waves-light btn blue accent-3"
-                icon="fab fa-facebook-f"
-            />
-       
+                textButton="Facebook"
+                cssClass="waves-effect waves-light btn blue darken-2"
+                icon="fa fa-facebook" />
               <button className="waves-effect waves-light btn red lighten-1" id="google">Google<i className="fab fa-google"></i>
               </button>
             </div>
