@@ -156,3 +156,4 @@ export default Login;
   //これめちゃくちゃはまったので注意
 ```
 - https://ngrok.comもしくはこれ使う
+- https://qiita.com/kitaro729/items/44214f9f81d3ebda58bdこの辺とか見るとよき
