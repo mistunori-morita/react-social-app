@@ -407,9 +407,9 @@ class Home extends Component {
 - このままだとlocalStrageをどちらかクリアしてもHome画面にけちゃうので修正
 ```js
 //これでisLogoutを更新して、localStrageに保存されてないときははじく
-    if(!fbData && !googleData){
-      this.setState({
-        isLogout: true
-      })
-    }
+if(!fbData && !googleData){
+  this.setState({
+    isLogout: true
+  })
+}
 ```
