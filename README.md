@@ -257,3 +257,61 @@ render() {
     })
   }
 ```
+
+## login情報をlocalStrageを使って判断
+```js
+import React, { Component } from 'react'
+import './index.css';
+
+class Home extends Component {
+  constructor(){
+    super();
+    //stateを定義1 これを使ってthis.state.xxxで表示させる
+    this.state = {
+      profileImage: '',
+      fullName: ''
+    }
+  }
+  //DOMツリーに追加される前に一度だけ呼ばれる　これでlocalsStrageのデータを引っ張る
+  componentWillMount(){
+    let fbData = JSON.parse(localStorage.getItem('fbData'));
+    let googleData = JSON.parse(localStorage.getItem('googleData'));
+    //条件分岐でsetStateをしてstateを更新(つまりこのstateをrender野中で使えるように)
+    if(fbData){
+      this.setState({
+        profileImage: fbData.picture,
+        fullName: fbData.name
+      })
+    }else if(googleData){
+      this.setState({
+        profileImage: googleData.picture,
+        fullName: googleData.name
+      })
+    }
+    console.log(fbData)
+    console.log(googleData)
+  }
+  render(){
+    console.log(this.state.profileImage)
+    return(
+      <div>
+        <nav>
+        //setStateをしたstateを使って表示させてる
+          <div className="nav-wrapper">
+            <a href="" className="brand-logo left">Logo</a>
+            <ul id="nav-mobile" className="right hide-on-med-and-down">
+              <li>{this.state.fullName }</li>
+            </ul>
+            <img className="circle Home-avatar" src={this.state.profileImage}/>
+          </div>
+        </nav>
+
+      </div>
+    );
+  }
+}
+
+export default Home;
+
+
+```

@@ -22,6 +22,19 @@ body {
     flex-direction: column;
 }
 
-.card-content button:nth-child(1){
-  margin-bottom: 15px;
+.card-content button:nth-child(1) {
+    margin-bottom: 15px;
+}
+
+.Home {
+    margin: 1%;
+}
+
+.Home nav {
+    padding: 1%;
+}
+
+.Home-avatar {
+    width: 45px;
+    height: auto;
 }
