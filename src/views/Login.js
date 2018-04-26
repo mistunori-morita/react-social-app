@@ -34,6 +34,16 @@ class Login extends Component {
   }
   responseGoogle(response){
     console.log(response);
+    localStorage.setItem("googleData", JSON.stringify({
+      token: response.token,
+      email: response.profileObj.email,
+      name: response.profileObj.name,
+      picture: response.profileObj.imageUrl,
+      social: 'google'
+    }));
+    this.setState({
+      isLogged: true
+    })
   }
 
   onFailure(error) {
@@ -61,7 +71,7 @@ class Login extends Component {
               />
 
               <GoogleLogin 
-                clientId="pps.googleusercontent.com"
+                clientId="334458494718-q8ne0lf78digc4ldtojqgluivts2g9da.apps.googleusercontent.com"
                 autoload={ false }
                 onSuccess={ this.responseGoogle }
                 onFailure={this.onFailure}

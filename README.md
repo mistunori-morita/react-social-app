@@ -238,3 +238,22 @@ render() {
 </GoogleLogin>
 
 ```
+- これでうまく行くと取得できる
+
+## localStorage突っ込む
+```js
+//googleLoginのresponseがかえってきたらlocalStrageに突っ込む
+  responseGoogle(response){
+    console.log(response);
+    localStorage.setItem("googleData", JSON.stringify({
+      token: response.token,
+      email: response.profileObj.email,
+      name: response.profileObj.name,
+      picture: response.profileObj.imageUrl,
+      social: 'google'
+    }));
+    this.setState({
+      isLogged: true
+    })
+  }
+```
