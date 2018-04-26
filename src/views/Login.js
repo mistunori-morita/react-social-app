@@ -30,8 +30,10 @@ class Login extends Component {
                 callback={this.responseFacebook}
                 onFailure={this.onFailure}
                 textButton="Facebook"
-                cssClass="waves-effect waves-light btn blue darken-2"
-                icon="fa fa-facebook" />
+                cssClass="waves-effect waves-light btn blue accent-3"
+                icon="fab fa-facebook-f"
+              />
+
               <button className="waves-effect waves-light btn red lighten-1" id="google">Google<i className="fab fa-google"></i>
               </button>
             </div>

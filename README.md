@@ -118,13 +118,14 @@ class Login extends Component {
             <FacebookLogin 
                 appId="xxxここはダッシュボードのID"
               autoload= {false}
-              fields="name, email, picuture.width(120)"
+              fields="name, email, picture.width(120)"
               callback={ this.responseFacebook}
               onFailure={this.onFailure}
               textButton="Facebook"
                 cssClass="waves-effect waves-light btn blue accent-3"
                 icon="fab fa-facebook-f"
             />
+       
        
               <button className="waves-effect waves-light btn red lighten-1" id="google">Google<i className="fab fa-google"></i>
               </button>
